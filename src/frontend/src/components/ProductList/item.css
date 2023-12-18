@@ -1,0 +1,94 @@
+.item-list-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50%;
+  padding: 20px;
+  margin-left: 40px; /* Padding between the left edge of the screen and the item list container */
+  margin-top: 100px; /* Add space below the header */
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: rgba(
+    173,
+    216,
+    230,
+    0.2
+  ); /* Light transparent shade of blue */
+  color: #fff;
+  z-index: 10; /* Higher z-index than the background but lower than the header */
+}
+
+/* Removes bullets from the list */
+.item-list {
+  list-style-type: none; /* Removes the bullets */
+  padding-left: 0; /* Removes default padding */
+}
+
+/* Header of the products list */
+.products-header {
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fff; /* White line for separation */
+}
+
+/* Individual item styling */
+.item {
+  background-color: #00416a; /* Dark blue background */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.item:hover {
+  background-color: #003366; /* Slightly darker blue on hover */
+}
+
+/* Product name and price */
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff; /* Product name and price are white */
+}
+
+.item-price {
+  font-weight: normal;
+  color: #fff; /* Price is white */
+}
+
+/* Product description */
+.item-description {
+  font-size: 16px;
+  color: #c0c0c0; /* Grey color for the description */
+}
+
+/* Add to Cart button styling */
+.item button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff; /* White button */
+  color: #00416a; /* Dark blue text to match the theme */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.item button:hover {
+  background-color: #e1e1e1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .item-list-container {
+    position: relative; /* Change position to relative */
+    width: 100%; /* Full width */
+    max-height: 50vh; /* Take up the remaining half of the viewport height */
+    overflow-y: auto; /* Allow scrolling */
+    margin-top: 20px; /* Space from the cart */
+    order: 2; /* Ensure items are displayed after the cart */
+  }
+}

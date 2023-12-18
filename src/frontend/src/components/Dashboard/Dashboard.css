@@ -1,0 +1,26 @@
+/* Set the global background for the body */
+body {
+  margin: 0; /* Remove default margin */
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(
+    to bottom right,
+    #011921,
+    #00ffff9f
+  ); /* Gradient background */
+  justify-content: center; /* Center the dashboard container */
+  align-items: center; /* Center the dashboard container vertically */
+}
+
+/* Style for the dashboard container */
+.dashboard-container {
+  display: flex; /* Enable flex layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-start; /* Align children to the start */
+  align-items: center; /* Center children horizontally */
+  width: 100%; /* Full width of the viewport */
+  min-height: 100vh; /* Minimum height to fill the viewport */
+  padding-top: 60px; /* Padding to avoid overlap with the fixed header */
+  box-sizing: border-box; /* Include padding in the width and height calculations */
+  position: relative; /* Relative positioning */
+  z-index: 1; /* Ensure it is above the background */
+}

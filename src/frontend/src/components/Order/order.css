@@ -1,0 +1,138 @@
+/* General page styling */
+.order-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Removed background-color to allow the body's gradient to be visible */
+}
+
+.order-container {
+  background: #243b53; /* Same dark shade as your header for consistency */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 400px; /* Adjust width as needed */
+}
+
+.order-header {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Button and list styles */
+.home-button,
+.order-button,
+.order-history-button {
+  background-color: #fff; /* Adjust to match your theme */
+  color: #102a43;
+  border: none;
+  font-size: 17px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: block; /* Makes it a block element */
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+/* Hover effect for buttons */
+.home-button:hover,
+.order-button:hover,
+.order-history-button:hover {
+  background-color: #e0e0e0; /* Light grey color */
+  transition: background-color 0.3s; /* Smooth transition for color change */
+}
+
+/* Remove underline from all links and set the font properties */
+a {
+  text-decoration: none; /* Removes underline */
+  font-family: inherit; /* Ensures font consistency */
+  color: inherit; /* Inherits color from parent for consistency */
+}
+
+/* Specifically target the order-history-button link */
+.order-history-button {
+  display: inline-block; /* Allows padding and margin like a button */
+  text-align: center; /* Aligns text in the center like a button */
+  text-decoration: none; /* Removes underline */
+  font-family: inherit; /* Ensures it matches the font of the submit button */
+}
+
+/* Ensures font consistency for buttons */
+.order-button,
+.order-history-button {
+  font-size: 1rem; /* Example font size, adjust as needed */
+  font-weight: bold; /* Example font weight, adjust as needed */
+  /* Add any other font styles to match your design */
+}
+
+/* Hover effect for order items */
+.order-item:hover {
+  background: #3a506b; /* Slightly lighter shade for hover effect */
+  transition: background 0.3s; /* Smooth transition for background change */
+}
+
+/* Hover effect for remove buttons */
+.remove-button:hover {
+  background-color: #cc3a4b; /* Slightly lighter shade for hover effect */
+  transition: background-color 0.3s; /* Smooth transition for color change */
+}
+
+/* Adjust the size of the home image */
+.home-button img {
+  width: 25px; /* Size adjusted as per header.css */
+  height: auto;
+  margin: 0 10px;
+}
+
+.order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.order-item {
+  background: #324a5f; /* Adjust to match your theme */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-button {
+  background-color: #e63946; /* A contrasting color for removal */
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order-total {
+  color: #fff;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .order-container {
+    width: 95%;
+    margin: 10px;
+    padding: 1rem;
+  }
+
+  .home-button,
+  .order-button,
+  .order-history-button {
+    margin: 10px auto;
+  }
+}

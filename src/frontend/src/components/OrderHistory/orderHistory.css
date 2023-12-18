@@ -1,0 +1,71 @@
+.order-history-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh; /* Add some space on the top */
+  min-height: 100vh;
+  background: linear-gradient(
+    160deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* Gradient background */
+}
+
+.order-history-header {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 2.5rem; /* Larger font size for the header */
+}
+
+.back-to-order-button {
+  background-color: #fff; /* Color matching your theme */
+  color: #102a43;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px; /* Space above the list */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.back-to-order-button:hover {
+  background-color: #e0e0e0; /* Light grey color for hover effect */
+}
+
+.order-history-list {
+  list-style: none;
+  padding: 0;
+  width: 80%;
+  max-width: 600px; /* Maximum width for the container */
+  background: #243b53; /* Background color matching the theme */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.order-history-item {
+  background: #324a5f; /* Slightly lighter background for items */
+  color: #ffffff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.order-history-item:hover {
+  background: #3a506b; /* Hover effect */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .order-history-list {
+    width: 90%; /* Slightly more width on smaller screens */
+  }
+
+  .order-history-header {
+    font-size: 2rem; /* Smaller font size for the header on smaller screens */
+  }
+}

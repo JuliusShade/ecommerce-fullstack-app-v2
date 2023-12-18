@@ -1,0 +1,81 @@
+/* Register.css */
+.register-page {
+  font-family: "Arial", sans-serif;
+  background: #00416a; /* Replace with the dark green used in your login page */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.register-container {
+  background: rgba(0, 0, 0, 0.6); /* Adjust transparency if needed */
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.register-container h1 {
+  margin-bottom: 30px;
+}
+
+.register-container .register-input-group {
+  margin-bottom: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.register-container .register-input-group input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.register-container .register-submit {
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  background: #ffffff;
+  color: #00416a;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.register-container .register-submit:hover {
+  background: #e1e1e1;
+}
+
+.register-container .register-link {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 20px;
+  display: block;
+}
+
+.register-container .register-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 15px;
+    max-width: 90%;
+  }
+}

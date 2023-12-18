@@ -1,0 +1,67 @@
+.header-container {
+  background-color: #00416a; /* Adjust to the same dark shade as the login page */
+  color: #fff;
+  padding: 10px 20px; /* Adjust padding as necessary */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px); /* Adjust width to compensate for padding */
+  position: fixed;
+  top: 0;
+  left: 0; /* Ensure header is not offset */
+  z-index: 1000; /* Ensure header is above all other content */
+}
+
+.header-title {
+  margin: 0;
+  font-size: 2rem; /* Adjusted for consistency */
+  color: #ffffff;
+}
+
+.welcome-message {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding-left: 20px; /* Add padding to ensure it's not against the screen edge */
+}
+
+.logout-button,
+.checkout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-image:hover,
+.checkout-image:hover {
+  filter: brightness(70%); /* Slightly darken the image */
+  transition: filter 0.3s; /* Smooth transition for the filter */
+}
+
+.logout-image,
+.checkout-image {
+  width: 25px; /* Adjust size as needed */
+  height: auto;
+  margin: 0 10px; /* Ensure there's space around the image */
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px; /* Reduce padding on smaller screens */
+    justify-content: space-around; /* Adjust spacing between elements */
+  }
+  .header-title,
+  .welcome-message {
+    font-size: 16px; /* Reduce font size on smaller screens */
+    margin: 0; /* Remove margin to save space */
+  }
+  .logout-button,
+  .checkout-button {
+    padding: 5px; /* Reduce padding on smaller screens */
+  }
+  .logout-image,
+  .checkout-image {
+    width: 20px; /* Adjust image size for smaller screens */
+  }
+}

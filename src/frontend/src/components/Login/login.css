@@ -1,0 +1,93 @@
+.login-page {
+  font-family: "Arial", sans-serif;
+  background: #00416a; /* Change to the appropriate dark green shade from the second image */
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-page .login-container {
+  background: rgba(0, 0, 0, 0.6); /* Adjust transparency if needed */
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+}
+
+.login-page .login-container h1 {
+  color: #ffffff; /* White text */
+  margin-bottom: 30px;
+}
+
+.login-page .input-group {
+  margin-bottom: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.login-page .input-group input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.login-page button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  background: #ffffff;
+  color: #00416a;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.login-page button:hover {
+  background: #e1e1e1;
+}
+
+.login-page .register-link,
+.login-page .google-auth {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 20px;
+  display: block;
+}
+
+.login-page .google-auth button {
+  width: auto;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  box-shadow: none;
+  padding-left: 0;
+}
+
+.login-page .register-link:hover,
+.login-page .google-auth:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .login-page .login-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page .login-container {
+    padding: 15px;
+    max-width: 90%;
+  }
+}
