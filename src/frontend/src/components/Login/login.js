@@ -12,7 +12,7 @@ export const LoginGoogle = ({ setAuth }) => {
       const { credential } = googleData;
 
       const response = await fetch(
-        "http://localhost:3000/api/v1/auth/oauth/google",
+        `http://${process.env.HOST_NAME}/api/v1/auth/oauth/google`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -71,11 +71,14 @@ export const Login = ({ setAuth }) => {
     try {
       const body = { email, password };
 
-      const response = await fetch("http://localhost:3000/api/v1/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        `http://${process.env.HOST_NAME}/api/v1/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
 
       const parseRes = await response.json();
 

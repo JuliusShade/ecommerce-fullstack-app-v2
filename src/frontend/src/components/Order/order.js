@@ -60,18 +60,21 @@ const Order = () => {
       const total = calculateTotal();
 
       // Submit the order
-      const orderResponse = await fetch("http://localhost:3000/api/v1/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          user_id: userId,
-          total: total,
-          status: true,
-        }),
-      });
+      const orderResponse = await fetch(
+        `http://${process.env.HOST_NAME}/api/v1/orders`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            user_id: userId,
+            total: total,
+            status: true,
+          }),
+        }
+      );
 
       if (orderResponse.ok) {
         const orderData = await orderResponse.json();
@@ -97,7 +100,7 @@ const Order = () => {
     try {
       const cartId = cartItems[0].cart_id; // Assuming all items have the same cart_id
       const response = await fetch(
-        `http://localhost:3000/api/v1/cartitem/cart/${cartId}`,
+        `http://${process.env.HOST_NAME}/api/v1/cartitem/cart/${cartId}`,
         {
           method: "DELETE",
           headers: {
@@ -118,7 +121,7 @@ const Order = () => {
     try {
       // Send a request to delete the item by cartitem_id
       const response = await fetch(
-        `http://localhost:3000/api/v1/cartitem/${cartItemId}`,
+        `http://${process.env.HOST_NAME}/api/v1/cartitem/${cartItemId}`,
         {
           method: "DELETE",
           headers: {

@@ -26,7 +26,7 @@ function App() {
   async function isAuth() {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/v1/auth/is-verify",
+        `http://${process.env.HOST_NAME}/api/v1/auth/is-verify`,
         {
           method: "GET",
           headers: { token: localStorage.token },

@@ -6,7 +6,7 @@ export const fetchCartItems = async (setCartItems) => {
 
   try {
     const userResponse = await fetch(
-      "http://localhost:3000/api/v1/auth/user-data",
+      `http://${process.env.HOST_NAME}/api/v1/auth/user-data`,
       {
         method: "GET",
         headers: {
@@ -25,7 +25,7 @@ export const fetchCartItems = async (setCartItems) => {
     const userId = userData.id;
 
     const cartResponse = await fetch(
-      `http://localhost:3000/api/v1/cart/user/${userId}`,
+      `http://${process.env.HOST_NAME}/api/v1/cart/user/${userId}`,
       {
         method: "GET",
         headers: {
@@ -42,7 +42,7 @@ export const fetchCartItems = async (setCartItems) => {
         const cartId = cartData[0].cart_id;
 
         const cartItemsResponse = await fetch(
-          `http://localhost:3000/api/v1/cartitem/${cartId}`
+          `http://${process.env.HOST_NAME}/api/v1/cartitem/${cartId}`
         );
 
         if (cartItemsResponse.ok) {
@@ -54,7 +54,7 @@ export const fetchCartItems = async (setCartItems) => {
           for (const cartItem of cartItemsData) {
             if (!quantityDict[cartItem.productid]) {
               const productResponse = await fetch(
-                `http://localhost:3000/api/v1/products/${cartItem.productid}`
+                `http://${process.env.HOST_NAME}/api/v1/products/${cartItem.productid}`
               );
 
               if (productResponse.ok) {
@@ -94,7 +94,7 @@ export const fetchCartItems = async (setCartItems) => {
         }
       } else {
         const createCartResponse = await fetch(
-          `http://localhost:3000/api/v1/cart/${userId}`,
+          `http://${process.env.HOST_NAME}/api/v1/cart/${userId}`,
           {
             method: "POST",
             headers: {
@@ -112,7 +112,7 @@ export const fetchCartItems = async (setCartItems) => {
           const newCartId = newCartData.cart_id;
 
           const newCartItemsResponse = await fetch(
-            `http://localhost:3000/api/v1/cartitem/${newCartId}`
+            `http://${process.env.HOST_NAME}/api/v1/cartitem/${newCartId}`
           );
 
           if (newCartItemsResponse.ok) {
@@ -194,7 +194,7 @@ export const Cart = ({ cartItems, setCartItems }) => {
     try {
       // Send a request to delete the item by cartitem_id
       const response = await fetch(
-        `http://localhost:3000/api/v1/cartitem/${cartItemId}`,
+        `http://${process.env.HOST_NAME}/api/v1/cartitem/${cartItemId}`,
         {
           method: "DELETE",
           headers: {
