@@ -23,7 +23,7 @@ const Register = ({ setAuth }) => {
       const body = { email, password, firstname, lastname };
 
       const response = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/auth/register`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/auth/register`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

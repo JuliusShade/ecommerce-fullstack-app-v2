@@ -61,7 +61,7 @@ const Order = () => {
 
       // Submit the order
       const orderResponse = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/orders`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/orders`,
         {
           method: "POST",
           headers: {
@@ -100,7 +100,7 @@ const Order = () => {
     try {
       const cartId = cartItems[0].cart_id; // Assuming all items have the same cart_id
       const response = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/cartitem/cart/${cartId}`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cartitem/cart/${cartId}`,
         {
           method: "DELETE",
           headers: {

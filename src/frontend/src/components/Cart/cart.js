@@ -6,7 +6,7 @@ export const fetchCartItems = async (setCartItems) => {
 
   try {
     const userResponse = await fetch(
-      `https://${process.env.HOST_NAME}/api/v1/auth/user-data`,
+      `https://${process.env.REACT_APP_HOST_NAME}/api/v1/auth/user-data`,
       {
         method: "GET",
         headers: {
@@ -25,7 +25,7 @@ export const fetchCartItems = async (setCartItems) => {
     const userId = userData.id;
 
     const cartResponse = await fetch(
-      `https://${process.env.HOST_NAME}/api/v1/cart/user/${userId}`,
+      `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cart/user/${userId}`,
       {
         method: "GET",
         headers: {
@@ -42,7 +42,7 @@ export const fetchCartItems = async (setCartItems) => {
         const cartId = cartData[0].cart_id;
 
         const cartItemsResponse = await fetch(
-          `https://${process.env.HOST_NAME}/api/v1/cartitem/${cartId}`
+          `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cartitem/${cartId}`
         );
 
         if (cartItemsResponse.ok) {
@@ -54,7 +54,7 @@ export const fetchCartItems = async (setCartItems) => {
           for (const cartItem of cartItemsData) {
             if (!quantityDict[cartItem.productid]) {
               const productResponse = await fetch(
-                `https://${process.env.HOST_NAME}/api/v1/products/${cartItem.productid}`
+                `https://${process.env.REACT_APP_HOST_NAME}/api/v1/products/${cartItem.productid}`
               );
 
               if (productResponse.ok) {
@@ -94,7 +94,7 @@ export const fetchCartItems = async (setCartItems) => {
         }
       } else {
         const createCartResponse = await fetch(
-          `https://${process.env.HOST_NAME}/api/v1/cart/${userId}`,
+          `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cart/${userId}`,
           {
             method: "POST",
             headers: {
@@ -112,7 +112,7 @@ export const fetchCartItems = async (setCartItems) => {
           const newCartId = newCartData.cart_id;
 
           const newCartItemsResponse = await fetch(
-            `https://${process.env.HOST_NAME}/api/v1/cartitem/${newCartId}`
+            `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cartitem/${newCartId}`
           );
 
           if (newCartItemsResponse.ok) {
@@ -194,7 +194,7 @@ export const Cart = ({ cartItems, setCartItems }) => {
     try {
       // Send a request to delete the item by cartitem_id
       const response = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/cartitem/${cartItemId}`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cartitem/${cartItemId}`,
         {
           method: "DELETE",
           headers: {

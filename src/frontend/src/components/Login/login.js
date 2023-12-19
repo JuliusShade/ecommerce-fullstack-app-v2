@@ -12,7 +12,7 @@ export const LoginGoogle = ({ setAuth }) => {
       const { credential } = googleData;
 
       const response = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/auth/oauth/google`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/auth/oauth/google`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -72,7 +72,7 @@ export const Login = ({ setAuth }) => {
       const body = { email, password };
 
       const response = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/auth/login`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/auth/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

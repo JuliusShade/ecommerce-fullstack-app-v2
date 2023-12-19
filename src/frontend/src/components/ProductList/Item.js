@@ -15,7 +15,7 @@ const ItemList = () => {
       try {
         // Fetch products
         const productsResponse = await fetch(
-          `https://${process.env.HOST_NAME}/api/v1/products`
+          `https://${process.env.REACT_APP_HOST_NAME}/api/v1/products`
         );
         const productsData = await productsResponse.json();
         setItems(productsData);
@@ -35,7 +35,7 @@ const ItemList = () => {
     console.log("Adding product to cart:", productId);
     try {
       const userResponse = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/auth/user-data`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/auth/user-data`,
         {
           method: "GET",
           headers: {
@@ -54,7 +54,7 @@ const ItemList = () => {
       const userId = userData.id;
 
       const checkCartResponse = await fetch(
-        `https://${process.env.HOST_NAME}/api/v1/cart/user/${userId}`,
+        `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cart/user/${userId}`,
         {
           method: "GET",
           headers: {
@@ -69,7 +69,7 @@ const ItemList = () => {
         const existingCartId = existingCartData[0]?.cart_id;
 
         const addToCartResponse = await fetch(
-          `https://${process.env.HOST_NAME}/api/v1/cartitem`,
+          `https://${process.env.REACT_APP_HOST_NAME}/api/v1/cartitem`,
           {
             method: "POST",
             headers: {
