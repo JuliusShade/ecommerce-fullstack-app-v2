@@ -30,7 +30,7 @@ const OrderHistory = () => {
 
       // Fetch orders for the user
       const response = await fetch(
-        `http://${process.env.HOST_NAME}/api/v1/orders/${userId}`,
+        `https://${process.env.HOST_NAME}/api/v1/orders/${userId}`,
         {
           method: "GET",
           headers: {
